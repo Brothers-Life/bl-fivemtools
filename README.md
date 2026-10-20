@@ -20,18 +20,19 @@ npm start              # ou : node server.js  → http://localhost:3000
 
 Sans les variables Discord, le site marche quand même : seule la sauvegarde de projets est désactivée (message au démarrage).
 
-## Mise en ligne sur Railway (forge.webgune.dev)
+## Mise en ligne sur Webgune (fivemtools.webgune.dev)
 
-1. Créer un service depuis ce dépôt (Railpack détecte Node tout seul, `npm start`).
-2. Ajouter un **volume** monté sur `/data` et mettre `DATA_DIR=/data` : sans volume, les projets sont perdus à chaque redéploiement.
-3. Mettre les variables de `.env.example` dans les réglages du service.
-4. Dans **Settings → Networking**, ajouter le domaine `forge.webgune.dev` et créer chez le DNS de webgune.dev l'enregistrement CNAME indiqué par Railway.
+Service `fivemtools` du projet **FIVEMTOOLS** sur webgune.cloud : source GitHub (`main`), build Railpack (`npm start`).
+
+- Volume de 1 Gi monté sur `/app/data`, et `DATA_DIR=/app/data` : la base des projets survit aux redéploiements.
+- Variables : `DATA_DIR`, `SESSION_SECRET`, `SESSION_DAYS`, puis les trois `DISCORD_*` ci-dessous.
+- Redéployer à la main : `webgune services redeploy <id du service>` (CLI `@webgune/cli`, clé `wgk_…`).
 
 ## Connexion Discord
 
 1. Créer une application sur https://discord.com/developers/applications (ou réutiliser celle du panel).
 2. Dans **OAuth2**, copier le *Client ID* et le *Client Secret* dans `DISCORD_CLIENT_ID` / `DISCORD_CLIENT_SECRET`.
-3. Dans **OAuth2 → Redirects**, ajouter exactement `DISCORD_REDIRECT_URI` (`https://forge.webgune.dev/auth/discord/callback`).
+3. Dans **OAuth2 → Redirects**, ajouter exactement `DISCORD_REDIRECT_URI` (`https://fivemtools.webgune.dev/auth/discord/callback`).
 4. Mettre une longue chaîne aléatoire dans `SESSION_SECRET`.
 
 Tout le monde peut se connecter. Pour bloquer un compte : `UPDATE users SET banned = 1 WHERE discord_id = '...'` dans `forge.db`.
