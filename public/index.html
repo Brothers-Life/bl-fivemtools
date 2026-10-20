@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BL Forge — outils FiveM</title>
+<meta name="description" content="Outils gratuits pour créateurs de serveurs FiveM : éditeur de handling, packs véhicules et vêtements addon, générateurs de scripts, couleurs GTA, convertisseurs.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=1.0.0">
+</head>
+<body>
+<div class="bg-orbs" aria-hidden="true"></div>
+<aside id="side">
+  <a class="brand" href="#/"><img src="logo.png" alt=""><span><b>BL Forge</b><small>outils FiveM</small></span></a>
+  <nav id="nav"></nav>
+  <div class="side-foot">par <a href="https://webgune.dev" target="_blank" rel="noopener">webgune.dev</a></div>
+</aside>
+<div id="scrim"></div>
+<header id="top">
+  <button id="menu-btn" class="btn icon ghost" aria-label="Menu"></button>
+  <div class="search-box">
+    <span class="search-ico"></span>
+    <input id="search" type="search" placeholder="Rechercher un outil…  ( / )" autocomplete="off" spellcheck="false">
+    <div id="search-results" hidden></div>
+  </div>
+  <span class="spacer"></span>
+  <button id="theme-btn" class="btn icon ghost" aria-label="Changer de thème"></button>
+  <div id="user-box"></div>
+</header>
+<main id="main"></main>
+
+<script src="js/core.js?v=1.0.0"></script>
+<!-- Outils : un fichier par outil, l'ordre ici est l'ordre d'affichage. -->
+<!-- TOOLS -->
+<script src="js/tools/handling.js?v=1.0.0"></script>
+<script src="js/tools/vehicles-meta.js?v=1.0.0"></script>
+<script src="js/tools/carvariations.js?v=1.0.0"></script>
+<script src="js/tools/vehicle-pack.js?v=1.0.0"></script>
+<script src="js/tools/vehicle-names.js?v=1.0.0"></script>
+<script src="js/tools/clothing-pack.js?v=1.0.0"></script>
+<script src="js/tools/clothing-names.js?v=1.0.0"></script>
+<script src="js/tools/outfits.js?v=1.0.0"></script>
+<script src="js/tools/fxmanifest.js?v=1.0.0"></script>
+<script src="js/tools/items.js?v=1.0.0"></script>
+<script src="js/tools/jobs.js?v=1.0.0"></script>
+<script src="js/tools/blips.js?v=1.0.0"></script>
+<script src="js/tools/server-cfg.js?v=1.0.0"></script>
+<script src="js/tools/config-lua.js?v=1.0.0"></script>
+<script src="js/tools/gta-text.js?v=1.0.0"></script>
+<script src="js/tools/chat-colors.js?v=1.0.0"></script>
+<script src="js/tools/discord-embed.js?v=1.0.0"></script>
+<script src="js/tools/hash.js?v=1.0.0"></script>
+<script src="js/tools/coords.js?v=1.0.0"></script>
+<script src="js/tools/json-lua.js?v=1.0.0"></script>
+<script src="js/tools/colors.js?v=1.0.0"></script>
+<script src="js/tools/units.js?v=1.0.0"></script>
+<script src="js/app.js?v=1.0.0"></script>
+<script>
+  // Icônes du bandeau (core.js est chargé).
+  document.getElementById('menu-btn').innerHTML = Forge.icon('menu');
+  document.querySelector('.search-ico').innerHTML = Forge.icon('search');
+</script>
+</body>
+</html>
